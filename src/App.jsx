@@ -36,19 +36,16 @@ if(tabContent){
                 <section id="core-concepts">
                     <h2>Core Concepts</h2>
                     <ul>
-                        <CoreConcept {...CORE_CONCEPTS[0]}></CoreConcept>
-                        <CoreConcept {...CORE_CONCEPTS[1]}></CoreConcept>
-                        <CoreConcept {...CORE_CONCEPTS[2]}></CoreConcept>
-                        <CoreConcept {...CORE_CONCEPTS[3]}></CoreConcept>
+                        {CORE_CONCEPTS.map((conceptItem) =><CoreConcept key={conceptItem.title}{...conceptItem}></CoreConcept>)}
                     </ul>
                 </section>
                 <section id="examples">
                     <h2>Models</h2>
                     <menu>
-                        <TabButton onSelect={() => onMenuClick("Nexus_6")}>Nexus 6</TabButton>
-                        <TabButton onSelect={() => onMenuClick("Nexus_7")}>Nexus 7</TabButton>
-                        <TabButton onSelect={() => onMenuClick("Nexus_8")}>Nexus 8</TabButton>
-                        <TabButton onSelect={() => onMenuClick("Nexus_9")}>Nexus 9</TabButton>
+                        <TabButton isSelected={tabContent==="Nexus_6"} onSelect={() => onMenuClick("Nexus_6")}>Nexus 6</TabButton>
+                        <TabButton isSelected={tabContent==="Nexus_7"} onSelect={() => onMenuClick("Nexus_7")}>Nexus 7</TabButton>
+                        <TabButton isSelected={tabContent==="Nexus_8"} onSelect={() => onMenuClick("Nexus_8")}>Nexus 8</TabButton>
+                        <TabButton isSelected={tabContent==="Nexus_9"} onSelect={() => onMenuClick("Nexus_9")}>Nexus 9</TabButton>
                     </menu>
                         {inquireSelection}
                 </section>
